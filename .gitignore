@@ -1,0 +1,15 @@
+cmd/fedcomp/__pycache__/datasource.cpython-36.pyc
+cmd/fedcomp/flat/__pycache__/datasource.cpython-36.pyc
+cmd/fedcomp/flat/__pycache__/fl_server.cpython-36.pyc
+cmd/fedcomp/flat/helloworld.txt
+cmd/fedcomp/flat/helloworldclient.txt
+cmd/fedcomp/flat/stats.txt
+cmd/RING/VGG_face_group/stats.txt
+cmd/RING/VGG_face_group/run.log
+cmd/RING/VGG_face_group/vgg_face2/*
+cmd/RING/VGG_face_group/__pycache__/datasource.cpython-36.pyc
+cmd/RING/VGG_face_group/bootstrap
+cmd/RING/VGG_face_group/libp2p_peer.h
+cmd/RING/VGG_face_group/libp2p_peer.so
+cmd/RING/VGG_face_group/csv_file0.csv
+cmd/RING/VGG_face_group/*.log
