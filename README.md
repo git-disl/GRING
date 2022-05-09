@@ -99,3 +99,15 @@ The code is provided as is, without warranty or support.
 Some of codes(e.g., Kademlia, gossip) are from Noise
 https://github.com/perlin-network/noise
 
+
+# Students Contributions
+
+# VGG_face_group FL application on GRING
+Federated Learning for face recognition with Kaggle VGG face2 dataset
+https://www.kaggle.com/greatgamedota/vggface2-test
+by Prabhy Omkar, Pawar Rohan, Okechukwu Chima, Dumay Alice Jeanne Mi and Sirpurkar Saurab
+
+# d3disp
+Visualization of overlay network on webbrowser interface
+by Prabhu Omkar
+
