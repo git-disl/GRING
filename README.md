@@ -96,7 +96,7 @@ Hardware : Ethernet
 # Status
 The code is provided as is, without warranty or support.
 
-Some of codes(e.g., Kademlia, gossip) are from Noise
+Some of codes(e.g., Kademlia, gossip protocol) are from Noise
 https://github.com/perlin-network/noise
 
 
