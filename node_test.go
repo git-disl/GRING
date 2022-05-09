@@ -4,7 +4,7 @@ import (
 	"context"
 	"errors"
 	"fmt"
-	"github.com/theued/GRING"
+	"github.com/git-disl/GRING"
 	"github.com/stretchr/testify/assert"
 	"go.uber.org/goleak"
 	"io"

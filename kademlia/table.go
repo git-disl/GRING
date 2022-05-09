@@ -3,7 +3,7 @@ package kademlia
 import (
 	"container/list"
 	"fmt"
-	"github.com/theued/GRING"
+	"github.com/git-disl/GRING"
 	"sync"
 )
 

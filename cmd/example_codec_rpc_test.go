@@ -3,7 +3,7 @@ package GRING_test
 import (
 	"context"
 	"fmt"
-	"github.com/theued/GRING"
+	"github.com/git-disl/GRING"
 )
 
 // This example demonstrates sending registered serialized Go types as requests, decoding registered serialized

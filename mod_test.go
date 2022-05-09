@@ -4,7 +4,7 @@ import (
 	"encoding/hex"
 	"encoding/json"
 	"github.com/oasisprotocol/ed25519"
-	"github.com/theued/GRING"
+	"github.com/git-disl/GRING"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )

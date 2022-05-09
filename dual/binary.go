@@ -2,7 +2,7 @@ package dual
 
 import (
 	"bytes"
-	"github.com/theued/GRING"
+	"github.com/git-disl/GRING"
 	"math/bits"
 	"sort"
 )

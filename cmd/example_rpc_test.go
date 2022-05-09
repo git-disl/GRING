@@ -3,7 +3,7 @@ package GRING_test
 import (
 	"context"
 	"fmt"
-	"github.com/theued/GRING"
+	"github.com/git-disl/GRING"
 )
 
 // This example demonstrates how to send/handle RPC requests across peers, how to listen for incoming peers, how

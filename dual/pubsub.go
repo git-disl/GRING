@@ -6,7 +6,7 @@ import (
 	"encoding/binary"
         "github.com/google/uuid"
 	//"net"
-	"github.com/theued/GRING"
+	"github.com/git-disl/GRING"
 	"io"
 	"sync"
 	//"fmt"

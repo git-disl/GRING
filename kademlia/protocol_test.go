@@ -2,8 +2,8 @@ package kademlia_test
 
 import (
 	"context"
-	"github.com/theued/GRING"
-	"github.com/theued/GRING/kademlia"
+	"github.com/git-disl/GRING"
+	"github.com/git-disl/GRING/kademlia"
 	"github.com/stretchr/testify/assert"
 	"go.uber.org/goleak"
 	"sync"

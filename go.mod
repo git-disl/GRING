@@ -1,4 +1,4 @@
-module github.com/theued/GRING
+module github.com/git-disl/GRING
 
 go 1.16
 

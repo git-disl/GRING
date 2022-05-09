@@ -2,7 +2,7 @@ package dual
 
 import (
 	"fmt"
-	"github.com/theued/GRING"
+	"github.com/git-disl/GRING"
 	"io"
 	"encoding/binary"
 )

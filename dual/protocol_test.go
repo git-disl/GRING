@@ -2,8 +2,8 @@ package dual_test
 
 import (
 	"context"
-	"github.com/theued/GRING"
-	"github.com/theued/GRING/dual"
+	"github.com/git-disl/GRING"
+	"github.com/git-disl/GRING/dual"
 	"github.com/stretchr/testify/assert"
 	"go.uber.org/goleak"
 	"sync"

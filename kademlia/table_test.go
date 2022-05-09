@@ -2,7 +2,7 @@ package kademlia
 
 import (
 	"encoding/binary"
-	"github.com/theued/GRING"
+	"github.com/git-disl/GRING"
 	"github.com/stretchr/testify/assert"
 	"math"
 	"math/rand"

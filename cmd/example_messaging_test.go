@@ -3,7 +3,7 @@ package GRING_test
 import (
 	"context"
 	"fmt"
-	"github.com/theued/GRING"
+	"github.com/git-disl/GRING"
 	"sync"
 )
 

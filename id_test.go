@@ -2,7 +2,7 @@ package GRING_test
 
 import (
 	"fmt"
-	"github.com/theued/GRING"
+	"github.com/git-disl/GRING"
 	"github.com/stretchr/testify/assert"
 	"io"
 	"net"

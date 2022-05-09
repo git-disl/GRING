@@ -2,7 +2,7 @@ package dual
 
 import (
 	"context"
-	"github.com/theued/GRING"
+	"github.com/git-disl/GRING"
 	"go.uber.org/zap"
 	"sync"
 	"time"

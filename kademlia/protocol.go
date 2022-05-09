@@ -6,7 +6,7 @@ import (
 	"context"
 	"errors"
 	"fmt"
-	"github.com/theued/GRING"
+	"github.com/git-disl/GRING"
 	"go.uber.org/zap"
 	"time"
 	"strings"

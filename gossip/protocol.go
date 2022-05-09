@@ -5,8 +5,8 @@ package gossip
 import (
 	"context"
 	"github.com/VictoriaMetrics/fastcache"
-	"github.com/theued/GRING"
-	"github.com/theued/GRING/kademlia"
+	"github.com/git-disl/GRING"
+	"github.com/git-disl/GRING/kademlia"
 	"sync"
 )
 
