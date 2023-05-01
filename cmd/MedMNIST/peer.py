@@ -439,15 +439,15 @@ class FederatedClient(object):
                 start = datetime.datetime.now()
 
                 # train my model
-                self.local_model.current_weights, train_loss, train_acc = self.local_model.train_one_round()
+                # self.local_model.current_weights, train_loss, train_acc = self.local_model.train_one_round()
 
                 # increase update done counter
-                self.lib.IncreaseNumClientUpdateInitiator()
+                # self.lib.IncreaseNumClientUpdateInitiator()
 
-                end = datetime.datetime.now()
-                diff = end - start
-                print("diff(sec) : " + str(diff.seconds)+str("\n"))
-                self.lib.RecordMyTrainTime(diff.seconds)
+                # end = datetime.datetime.now()
+                # diff = end - start
+                # print("diff(sec) : " + str(diff.seconds)+str("\n"))
+                # self.lib.RecordMyTrainTime(diff.seconds)
 
         # subleader handler
         def on_request_update_subleader(data):
@@ -733,6 +733,25 @@ class FederatedClient(object):
             sdata = obj_to_pickle_string(resp)
             self.lib.Report_GR(sdata, sys.getsizeof(sdata), OP_CLIENT_EVAL, aggregation_num)
 
+        def on_update_initiator_after_regroup(data):
+            print('APP : on_update_initiator_after_regroup\n')
+            data = pickle_string_to_obj(data)
+            self.current_round = data['round_number']
+            if not self.local_model:
+                self.local_model = LocalModel(data, self.datasource)
+            self.local_model.set_weights(data['current_weights'])
+            torch.save(self.local_model.current_weights, 'current_local'+str(self.port)+'.model')
+            with open('current_local'+str(self.port)+'.model', "rb") as fd:
+                buf = io.BytesIO(fd.read())
+            metadata = {
+                'model': buf,
+                'model_id': data['model_id']
+            }
+            self.lib.IncreaseNumClientReady()
+            sdata = obj_to_pickle_string(metadata)
+            self.lib.Fedcomp_GR(sdata, sys.getsizeof(sdata),OP_INIT)
+            
+
         global onsetnumclient
         onsetnumclient = FUNC2(on_set_num_client)
         fnname="on_set_num_client"
@@ -823,17 +842,22 @@ class FederatedClient(object):
         fnname="on_train_my_model"
         self.lib.Register_callback(fnname.encode('utf-8'),ontrainmymodel)
 
+        global onupdateinitiatorafterregroup
+        onupdateinitiatorafterregroup = FUNC(on_update_initiator_after_regroup)
+        fnname="on_update_initiator_after_regroup"
+        self.lib.Register_callback(fnname.encode('utf-8'),onupdateinitiatorafterregroup)
+
 
     #internal function
     # Note: we assume that during training the #workers will be >= MIN_NUM_WORKERS
     def train_next_round(self):
-        self.current_round += 1
+        # self.current_round += 1
         # buffers all client updates
         self.current_round_client_updates = []
 
         #filehandle = open("run.log", "a")
         #filehandle.write("### Round "+str(self.current_ro(und)+"###\n")
-        print("### Round "+str(self.current_round)+"###\n")
+        # print("### Round "+str(self.current_round)+"###\n")
         #filehandle.close()
 
         # TODO : need to fix
@@ -849,8 +873,11 @@ class FederatedClient(object):
             'current_weights': buf,
         }
         sdata = obj_to_pickle_string(metadata)
-        self.lib.Fedcomp_GR(sdata, sys.getsizeof(sdata), OP_REQUEST_UPDATE)
-        print("request_update sent\n")
+        # self.lib.Fedcomp_GR(sdata, sys.getsizeof(sdata), OP_REQUEST_UPDATE)
+        # print("request_update sent\n")
+        print(" \n Calling Regroup \n")
+        self.lib.Regroup(sdata, sys.getsizeof(sdata), self.current_round+1)
+        print(" \n Done Regroup \n")
 
     def stop_and_eval(self):
         self.eval_client_updates = []

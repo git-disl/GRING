@@ -12,7 +12,7 @@ type Events struct {
 	// OnPeerAdmitted is called when a peer is admitted to being inserted into your nodes' routing table.
 	OnPeerAdmitted_gr func(id GRING.ID)
 
-        // OnPeerContacted is called when a peer is contacting this node. It is for collecting subscribers.
+	// OnPeerContacted is called when a peer is contacting this node. It is for collecting subscribers.
 	OnPeerContacted func(id GRING.ID)
 
 	// OnPeerActivity is called when your node interacts with a peer, causing the peer's entry in your nodes' routing
@@ -45,15 +45,19 @@ type Events struct {
 
 	OnFedComputationPush func(msg GossipMessage, ctx GRING.HandlerContext)
 
-        OnFedComputationPullReq func(msg GossipMessage, ctx GRING.HandlerContext)
+	OnFedComputationPullReq func(msg GossipMessage, ctx GRING.HandlerContext)
 
-        OnFedComputationPull func(msg GossipMessage, ctx GRING.HandlerContext)
+	OnFedComputationPull func(msg GossipMessage, ctx GRING.HandlerContext)
 
-        OnRecvGossipPush func(msg GossipMessage, ctx GRING.HandlerContext)
+	OnRecvGossipPush func(msg GossipMessage, ctx GRING.HandlerContext)
 
-        OnRecvGossipPullReq func(msg GossipMessage, ctx GRING.HandlerContext)
+	OnRecvGossipPullReq func(msg GossipMessage, ctx GRING.HandlerContext)
 
 	OnRecvRelayMessage func(msg RelayMessage, ctx GRING.HandlerContext)
 
 	OnRecvGossipMsg func(msg GossipMessage)
+
+	OnSelectPeers func(msg P2pMessage, next_round int) []Subscriber
+
+	StartTrainingAfterRegroup func(model_metadata []byte)
 }
